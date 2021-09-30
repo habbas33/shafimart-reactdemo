@@ -20,7 +20,7 @@ import os
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)ghx#xb4kgp-bbfqc=f$kd5y_42(0ce@mgy$hel35bx2=e@j*e'
+SECRET_KEY = os.getenv('SM_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -133,7 +133,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shafimart',
         'USER' : 'haider',
-        'PASSWORD' : 'pg2564063',
+        'PASSWORD' : os.getenv("SM_DB_PSW"),
         'HOST' : 'shafimart-identifier.cjn1ttlolhoo.us-east-2.rds.amazonaws.com',
         'PORT' : '5432',
     }
